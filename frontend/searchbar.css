@@ -1,0 +1,45 @@
+.search-bar input[type=text] {
+    border: none;
+}
+
+.search-bar {
+    transform: translate(15%, 300%);
+    position: absolute;
+    background: #2f3640;
+    border-radius: 40px;
+    height: 0.5rem;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-btn {
+    color: #d43132;
+    float: right;
+    width: 20px;
+    height: 20px;
+}
+
+.microphone-btn {
+    color: #d43132;
+    float: right;
+    width: 20px;
+    height: 20px;
+    border: radius 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 14px;
+    transition: 0.4s;
+    line-height: 0.5rem;
+}
