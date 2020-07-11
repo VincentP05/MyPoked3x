@@ -1,0 +1,89 @@
+.main-wrapper {
+  width: 80%;
+  height: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.flex-item1 {
+  background-color: #d43132;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.flex-item2 {
+  background-color: #d43132;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: 8px solid #89061c;
+}
+
+.top-menu {
+  min-width: 100%;
+  min-height: 8rem;
+  height: auto;
+  width: auto;
+  background-image: url(images/rsz_pokedex.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom: solid #89061c;
+}
+
+.display-screen {
+  background-color: #b5d9ef;
+  margin: 1rem;
+  border: 4px solid #2f3640;
+}
+
+.display-screen h1,
+h3 {
+  margin: 0rem;
+  padding: 5px;
+}
+
+.poke-description {
+  background-color: greenyellow;
+  margin: 1rem;
+}
+
+@media (max-width: 480px) {
+  .main-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flex-item1,
+  .flex-item2 {
+    width: 100%;
+  }
+
+  .flex-item1 {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+  }
+
+  .flex-item2 {
+    border-left: 0;
+    border-top: 8px solid #89061c;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .search-bar {
+    background-size: contain;
+    min-width: 100%;
+    min-height: 5rem;
+    width: auto;
+    height: auto;
+  }
+}
