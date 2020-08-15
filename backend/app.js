@@ -8,8 +8,6 @@ const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 //relative path
 const Pokemon = require('./pokemon.js');
-let Pokedex = require('pokedex-promise-v2');
-let p = new Pokedex();
 
 app.use(
   bodyParser.urlencoded({
@@ -31,21 +29,35 @@ app.post('/', (req, res) => {
 });
 
 //An Array of all 807 Pokemon, starting with bulbasaur to zeraora
-let nationalPokedex = new Array(2);
+let nationalPokedex = new Array(40);
 console.log(nationalPokedex.length);
 
 //This function takes the data and makes an array of the pokemon
+//async always returns a promise, also allows for the use of await
 async function generatePokedex() {
   let i;
   for (i = 0; i < nationalPokedex.length; i++) {
     let pokeID = i + 1; //to get pokemon to show up in order make this function async, and put await in front of this line
-    const data1 = await initPokeData1(pokeID);
-    const data2 = await initPokeData2(pokeID);
-    console.log(data1);
-    console.log(data2);
-
-
+    const data1 = initPokeData1(pokeID);
+    const data2 = initPokeData2(pokeID);
+    //line below halves the time, instead of having to await data1 and data2 individually, they run asynchronously
+    const finalData = await Promise.all([data1, data2]); // id,name,genus,entry,weight,height,type,sprite
+    //finalData is a array of arrays data1 and data2
+    //we want the parameters to be in the order of
+    //id,name,weight,height,types,sprite,genus, and entry
+    let newPokemon = new Pokemon(
+      finalData[0][0], //id
+      finalData[0][1], //name
+      finalData[1][0], //weight
+      finalData[1][1], //height
+      finalData[1][2], //types
+      finalData[1][3], //sprites
+      finalData[0][2], //genus
+      finalData[0][3] //entry
+    )
+    nationalPokedex[i] = newPokemon
   }
+  return nationalPokedex;
 }
 
 //function which calls to pokeapi and gets the first portion of data required
@@ -87,12 +99,12 @@ async function initPokeData1(pokemonID) {
       //USUM-gen7
       entry = pokeData.flavor_text_entries[7].flavor_text;
 
-    let dataSet1 = {
-      id,
+    let dataSet1 = [id,
       name,
       genus,
       entry
-    };
+    ];
+
     return dataSet1;
   } catch (err) {
     console.log(err);
@@ -111,12 +123,11 @@ async function initPokeData2(pokemonID) {
     let height = pokeData.height;
     let type = pokeData.types;
     let sprite = pokeData.sprites.front_default;
-    let dataSet2 = {
-      weight,
+    let dataSet2 = [weight,
       height,
       type,
       sprite
-    };
+    ];
     return dataSet2;
 
   } catch (err) {
@@ -124,33 +135,15 @@ async function initPokeData2(pokemonID) {
   }
 }
 
-//Creates single pokemon objects to be sent back
-function createPokemonObj(pokemonData) {
-  //Destructuring
-  const {
-    id,
-    name,
-    weight,
-    height,
-    type,
-    sprite,
-    genus,
-    entry
-  } = pokemonData;
-  let newPokemon = new Pokemon(
-    id,
-    name,
-    weight,
-    height,
-    type,
-    sprite,
-    genus,
-    entry
-  );
-  //console.log(newPokemon); //I have to import the class...
+
+//Neat way to obtain the whole pokedex instead of having to do generatePokedex.then()
+async function getNationalPokedex() {
+  const finalPokedex = await generatePokedex();
+  console.log(finalPokedex);
+  return finalPokedex;
 }
 
-generatePokedex();
+getNationalPokedex();
 
 app.listen(3000, () => {
   console.log('Server started on port 3000');
