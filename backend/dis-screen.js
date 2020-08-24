@@ -1,1 +1,0 @@
-//dynamic html/css for the pokemon display screen
