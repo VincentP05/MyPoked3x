@@ -55,7 +55,7 @@ let temp = new Array(1);
 
 //When search route is targeted
 router
-    .route('/bar') //Dealing with /search/bar , router object already starts with /search
+    .route('/pokemon') //Dealing with /search/bar , router object already starts with /search
     .get((req, res) => {
         res.render('pokedex', {
             id: pokemonTraits[0],
@@ -78,7 +78,7 @@ router
         setTimeout(() => {
             console.log(temp[0]);
             if (temp[0] == 1) {
-                res.redirect('/search/bar')
+                res.redirect('/search/pokemon')
             } else {
                 //Put an alert or something to notify user that input is not a Pokemon
                 console.log('Invalid Input');

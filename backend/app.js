@@ -1,5 +1,4 @@
-//This is where all the calls will be made and etc.
-//Sorting algorithms will also go here
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -21,7 +20,7 @@ app.use(express.static(reqPath + '/public'));
 
 //Loads up home page
 app.get('/', (req, res) => {
-  res.redirect('/search/bar');
+  res.redirect('/search/pokemon');
 });
 
 app.listen(3000, () => {
