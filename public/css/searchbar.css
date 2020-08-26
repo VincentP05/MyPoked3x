@@ -19,6 +19,8 @@
     float: right;
     width: 20px;
     height: 20px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 .microphone-btn {

@@ -71,7 +71,10 @@ router
     .post((req, res) => {
         //Updates EJS values, which then redirect to be changed by get
         const searchPokemon = req.body.pokemon;
-        validatePokemon(_.toLower(searchPokemon))
+        let pokemonLowerCase = _.toLower(searchPokemon);
+        //For pokemon like farfetch'd, database removed the apostrophe
+        pokemonLowerCase = pokemonLowerCase.replace("'", "");
+        validatePokemon(_.toLower(pokemonLowerCase));
         //Find requires a bit of time
         //Do this so temp[] can be updated 
         //Prior to this temp[] always ran the default value, which is undefined

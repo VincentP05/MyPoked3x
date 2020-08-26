@@ -1,166 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Poked3x</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/css/searchbar.css" />
-    <link rel="stylesheet" type="text/css" href="/css/scrollbox.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-    />
-  </head>
 
-  <body>
-    <div class="main-wrapper">
-      <div class="flex-item1" class="roundcrn">
-        <div class="top-menu">
-          <div class="search-bar">
-            <form action="/search/pokemon" method="post">
-              <input
-                class="search-txt"
-                name="pokemon"
-                type="text"
-                autocomplete="off"
-                placeholder="Search Pokemon"
-              />
-              <button class="search-btn" type="submit" name="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </form>
-            <a class="microphone-btn" href="#">
-              <i class="fa fa-microphone" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-        <div class="display-screen">
-          <p><%=name%></p>
-          <span>
-            <% if(types.length === 1){ %>
-            <p><%=types[0]%></p>
-            <% } else if (types.length === 2){ %>
-            <p><%=types[0]%> <%=types[1]%></p>
-            <% } %>
-            <p>#<%=id%></p>
-          </span>
-          <img src="<%=sprites%>" max-height="128px" max-width="128px" />
-          <span>
-            <p><%=genus%></p>
-            <p>Height: <%=height%></p>
-            <p>Weight: <%=weight%></p>
-          </span>
-        </div>
-        <div class="poke-description">
-          <p>Pokemon Entry:</p>
-          <form action="">
-            <input type="checkbox" id="audio" name="audio" value="" />
-            <label for="audio">Audio(Microphone Input Only)</label><br />
-            <input type="submit" value="Submit" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poked3x</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="/css/searchbar.css" />
+  <link rel="stylesheet" type="text/css" href="/css/scrollbox.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <div class="flex-item1" class="roundcrn">
+      <div class="top-menu">
+        <div class="search-bar">
+          <form action="/search/pokemon" method="post">
+            <input class="search-txt" name="pokemon" type="text" autocomplete="off" placeholder="Search Pokemon" />
+            <button class="search-btn" type="submit" name="submit">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
           </form>
-          <p><%=entry%></p>
+          <button id="microphone-btn">
+            <i class="fa fa-microphone" aria-hidden="true"></i>
+          </button>
+          <span id='message'></span>
         </div>
       </div>
-      <div class="flex-item2">
-        <div class="scroll-box">
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-          <ul>
-            Pikachu
-          </ul>
-        </div>
-        <h1>This is where the previous and next button will go</h1>
+      <div class="display-screen">
+        <p><%=name%></p>
+        <span>
+          <% if(types.length === 1){ %>
+          <p><%=types[0]%></p>
+          <% } else if (types.length === 2){ %>
+          <p><%=types[0]%> <%=types[1]%></p>
+          <% } %>
+          <p>#<%=id%></p>
+        </span>
+        <img src="<%=sprites%>" max-height="128px" max-width="128px" />
+        <span>
+          <p><%=genus%></p>
+          <p>Height: <%=height%></p>
+          <p>Weight: <%=weight%></p>
+        </span>
+      </div>
+      <div class="poke-description">
+        <p>Pokemon Entry:</p>
+        <form action="">
+          <input type="checkbox" id="audio" name="audio" value="" />
+          <label for="audio">Audio(Microphone Input Only)</label><br />
+          <input type="submit" value="Submit" />
+        </form>
+        <p><%=entry%></p>
       </div>
     </div>
-  </body>
+    <div class="flex-item2">
+      <div class="scroll-box">
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+        <ul>
+          Pikachu
+        </ul>
+      </div>
+      <h1>This is where the previous and next button will go</h1>
+    </div>
+  </div>
+  <script src="/speech.js"></script>
+</body>
+
 </html>

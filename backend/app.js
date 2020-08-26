@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const controller = require('./controller');
-const database = require('./database');
 
 //Request endpoints will be handled in controller.js
 app.use('/search', controller);
