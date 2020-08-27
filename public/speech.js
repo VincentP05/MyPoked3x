@@ -1,17 +1,18 @@
-//I will need a way to import pokemon names in from database
+//Gets all pokemon names from pokemonList
+import allPokemons from './pokemonList.js'
 
 //Web Speech Api runs on browser, no node support
 //Deals with speech to text
 // and text to speech
-let message = document.querySelector('#message');
 
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 
 //The grammer
-let pokemonNames = [];
+let pokemons = allPokemons;
 
-let grammer = '#JSGF V1.0';
+//Allows detecting names of pokemon easier
+let grammer = '#JSGF V1.0; grammar pokemons; public <pokemon> = ' + pokemons.join(' | ') + ' ;';
 
 let recognition = new SpeechRecognition();
 let speechRecognitionGrammerList = new SpeechGrammarList();
@@ -28,7 +29,7 @@ recognition.interimResults = false;
 // onerror
 
 let searchBar = document.querySelector('.search-txt');
-let searchButton = document.querySelector(".search-btn");
+let searchButton = document.querySelector('.search-btn');
 
 recognition.onresult = (event) => {
     let last = event.results.length - 1;
@@ -38,28 +39,23 @@ recognition.onresult = (event) => {
     searchBar.placeholder = 'Search Pokemon';
     searchBar.value = name;
     searchButton.click();
-
-}
+};
 
 //When the user finishes speaking, it stops listening
 recognition.onspeechend = () => {
     recognition.stop();
-}
+};
 
 //What happens when an error occurs
 recognition.onerror = (event) => {
     message.textContent = 'Error occured in recognition: ' + event.error;
-}
+};
 
 //When microphone button is clicked, speech recognition starts
 document.querySelector('#microphone-btn').addEventListener('click', () => {
     searchBar.placeholder = 'Listening...';
     recognition.start();
-})
-
-
-
-
+});
 
 //function to take in text, when audio button is clicked
 

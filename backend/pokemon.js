@@ -16,7 +16,7 @@ class Pokemon {
     return this.id;
   }
   getName() {
-    return _.capitalize(this.name);
+    return _.startCase(_.toLower(this.name));
   }
   //Returns weight in lbs
   getWeight() {
