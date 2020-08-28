@@ -85,6 +85,7 @@ router
             } else {
                 //Put an alert or something to notify user that input is not a Pokemon
                 console.log('Invalid Input');
+
                 //On error, value should be nothing and a symbol should appear 
             }
             temp = [];
