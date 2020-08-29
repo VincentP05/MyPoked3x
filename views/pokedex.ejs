@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
   <link rel="stylesheet" type="text/css" href="/css/searchbar.css" />
   <link rel="stylesheet" type="text/css" href="/css/scrollbox.css" />
+  <link rel="stylesheet" type="text/css" href="/css/autocomplete.css" />
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
 </head>
@@ -17,8 +18,8 @@
     <div class="flex-item1" class="roundcrn">
       <div class="top-menu">
         <div class="search-bar">
-          <form action="/search/pokemon" method="post">
-            <input class="search-txt" name="pokemon" type="text" autocomplete="off" placeholder="Search Pokemon" />
+          <form action="/search/pokemon" method="post" autocomplete="off">
+            <input class="search-txt" id='myInput' name="pokemon" type="text" placeholder="Search Pokemon" />
             <button class="search-btn" type="submit" name="submit">
               <i class="fa fa-search" aria-hidden="true"></i>
             </button>
@@ -27,6 +28,9 @@
             <i class="fa fa-microphone" aria-hidden="true"></i>
           </button>
           <span id="message"></span>
+          <div class="autocomplete">
+
+          </div>
         </div>
       </div>
       <div class="display-screen">
@@ -158,6 +162,7 @@
   <script type="module" src="/speech.js"></script>
   <script type="module" src="/pokemonList.js"></script>
   <script type="module" src="/searchAssist.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
 </body>
 
 </html>

@@ -24,10 +24,6 @@ recognition.lang = 'en-US';
 //or get the words after the user is finish speaking (false)
 recognition.interimResults = false;
 
-// onresult
-// onspeechend
-// onerror
-
 let searchBar = document.querySelector('.search-txt');
 let searchButton = document.querySelector('.search-btn');
 let microphoneBtn = document.querySelector('#microphone-btn');
@@ -46,7 +42,7 @@ recognition.onresult = (event) => {
 //Whenever the search button is clicked, by microphone input
 //or manual input, there will be a check done to see if the input is valid or not
 searchButton.addEventListener('click', () => {
-    let name = searchBar.value;
+    let name = _.startCase(_.toLower(searchBar.value));
     setTimeout(() => {
         //Below capitalizes each first letter of the name,
         //since pokemonList strings start with capital
