@@ -31,9 +31,9 @@ Pocketmon.find({}, (err, pokemonList) => {
         //and within generatePokedex(), the pokemon will be pushed to mongodb
         generatePokedex(numOfPokemon);
     } else {
-        console.log("Pokedex already exists");
+        console.log('Pokedex already exists');
     }
-})
+});
 
 //This function takes the data and makes an array of the pokemon
 //async always returns a promise, also allows for the use of await
@@ -71,8 +71,8 @@ async function generatePokedex(numberOfPokemon) {
             } else {
                 console.log('Pokemon successfully added to Pokedex');
             }
-        })
-    })
+        });
+    });
     //return nationalPokedex;
 }
 
@@ -92,8 +92,7 @@ async function initPokeData1(pokemonID) {
         //entries vary between games
 
         //Platinum-gen1
-        if (id <= 151)
-            entry = pokeData.flavor_text_entries[13].flavor_text;
+        if (id <= 151) entry = pokeData.flavor_text_entries[13].flavor_text;
         //Platinum-gen2
         else if (id >= 152 && id <= 251)
             entry = pokeData.flavor_text_entries[10].flavor_text;

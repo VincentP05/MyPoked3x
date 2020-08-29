@@ -13,8 +13,9 @@ class Pokemon {
   }
 
   getID() {
-    return this.id;
+    return this.id.toString().padStart(3, '0');
   }
+
   getName() {
     return _.startCase(_.toLower(this.name));
   }
