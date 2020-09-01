@@ -47,6 +47,7 @@ let pokemonTraits = [
     defaultPokemon.getSprite(),
     defaultPokemon.getGenus(),
     defaultPokemon.getEntry(),
+    defaultPokemon.getNormID(),
 ];
 
 
@@ -108,6 +109,7 @@ router
             sprites: pokemonTraits[5],
             genus: pokemonTraits[6],
             entry: pokemonTraits[7],
+            regID: pokemonTraits[8]
         });
     }) //Returns the name of the pokemon from search bar
     .post((req, res) => {

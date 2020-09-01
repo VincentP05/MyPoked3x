@@ -44,6 +44,8 @@ const synth = window.speechSynthesis;
 //or manual input, there will be a check done to see if the input is valid or not
 searchButton.addEventListener('click', () => {
     let name = _.startCase(_.toLower(searchBar.value));
+    //Replaces spaces with -
+    name = name.replace(/\s+/g, '-')
     //When user goes to next people, audio from last pokemon is canceled
     synth.cancel();
     setTimeout(() => {

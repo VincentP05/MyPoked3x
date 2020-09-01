@@ -34,7 +34,6 @@
         </div>
       </div>
       <div class="display-screen">
-        <input type="hidden" id="poke" value="<%=name%>">
         <p id='pokName'><%=name%></p>
         <span>
           <% if(types.length === 1){ %>
@@ -43,6 +42,7 @@
           <p><%=types[0]%> <%=types[1]%></p>
           <% } %>
           <p>#<%=id%></p>
+          <input type="hidden" id="regID" value="<%=regID%>">
         </span>
         <img src="<%=sprites%>" max-height="128px" max-width="128px" />
         <span>

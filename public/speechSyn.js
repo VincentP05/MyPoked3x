@@ -31,7 +31,7 @@ checkBox.addEventListener('click', () => {
     if (checkBox.checked == true) {
         check = 'yes';
         localStorage.setItem('checked', check);
-        searchBar.value = pokName.textContent;
+        searchBar.value = (pokName.textContent).replace(/\s+/g, '-');
         searchButton.click();
     } else {
         check = 'no';
@@ -83,19 +83,3 @@ if ((localStorage.getItem('checked')) == 'yes') {
 
 //lets remove the event listener and just have audio play, when a new page
 //or something is created and if the check box is checked
-
-
-
-
-
-
-
-
-
-
-
-
-
-//right now I have two bugs, talonflame and another pokemon have their entry in spanish
-//secondly EJS values ignores spaces and takes only the first value, pokemon with a space or dash in their names
-//have bugs within the scroll list

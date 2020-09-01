@@ -31,12 +31,13 @@ for (i = 0; i < pokemons.length - 2; i++) {
 //Next and Previous button here as well, since the code for this wont be too long
 let leftBtn = document.querySelector('.left-button');
 let rightBtn = document.querySelector('.right-button');
-let uniqueName = document.querySelector('#poke');
+let uniqueID = document.querySelector('#regID');
 
 leftBtn.addEventListener('click', () => {
-    const pokeName = uniqueName.value
-    const pokeId = pokemons.indexOf(pokeName);
+    //pokeId is the current array index of pokemons
+    const pokeId = Number(uniqueID.value) - 1;
     if (pokeId > 0) {
+        //previous pokemon we want to see
         let prevPokemon = pokemons[pokeId - 1];
         searchBar.value = prevPokemon;
         searchButton.click();
@@ -45,9 +46,10 @@ leftBtn.addEventListener('click', () => {
 })
 
 rightBtn.addEventListener('click', () => {
-    const pokeName = uniqueName.value
-    const pokeId = pokemons.indexOf(pokeName);
+    //pokeId is the current array index of pokemons
+    const pokeId = Number(uniqueID.value) - 1
     if (pokeId < 806) {
+        //next pokemon we want to see
         let nextPokemon = pokemons[pokeId + 1];
         searchBar.value = nextPokemon;
         searchButton.click();
