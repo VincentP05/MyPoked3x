@@ -27,3 +27,30 @@ for (i = 0; i < pokemons.length - 2; i++) {
     listItem.addEventListener('click', handleListItemClick);
     scrollbox.appendChild(listItem);
 }
+
+//Next and Previous button here as well, since the code for this wont be too long
+let leftBtn = document.querySelector('.left-button');
+let rightBtn = document.querySelector('.right-button');
+let uniqueName = document.querySelector('#poke');
+
+leftBtn.addEventListener('click', () => {
+    const pokeName = uniqueName.value
+    const pokeId = pokemons.indexOf(pokeName);
+    if (pokeId > 0) {
+        let prevPokemon = pokemons[pokeId - 1];
+        searchBar.value = prevPokemon;
+        searchButton.click();
+    }
+
+})
+
+rightBtn.addEventListener('click', () => {
+    const pokeName = uniqueName.value
+    const pokeId = pokemons.indexOf(pokeName);
+    if (pokeId < 806) {
+        let nextPokemon = pokemons[pokeId + 1];
+        searchBar.value = nextPokemon;
+        searchButton.click();
+    }
+
+})

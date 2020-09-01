@@ -34,7 +34,8 @@
         </div>
       </div>
       <div class="display-screen">
-        <p><%=name%></p>
+        <input type="hidden" id="poke" value="<%=name%>">
+        <p id='pokName'><%=name%></p>
         <span>
           <% if(types.length === 1){ %>
           <p><%=types[0]%></p>
@@ -45,32 +46,34 @@
         </span>
         <img src="<%=sprites%>" max-height="128px" max-width="128px" />
         <span>
-          <p><%=genus%></p>
+          <p id='genus'><%=genus%></p>
           <p>Height: <%=height%></p>
           <p>Weight: <%=weight%></p>
         </span>
       </div>
       <div class="poke-description">
         <p>Pokemon Entry:</p>
-        <form action="">
-          <input type="checkbox" id="audio" name="audio" value="" />
-          <label for="audio">Audio(Microphone Input Only)</label><br />
-          <input type="submit" value="Submit" />
-        </form>
-        <p><%=entry%></p>
+        <input type="checkbox" id="audio" name="audio" value="no" />
+        <label for="audio">Audio</label><br>
+        <p id='entry'><%=entry%></p>
+      </div>
+      <div class="next_prev_buttons">
+        <div class="left-button">Prev</div>
+        <div class="right-button">Next</div>
       </div>
     </div>
     <div class="flex-item2">
       <div class="scroll-box">
         <!--Pokemon List will be created here-->
       </div>
-      <h1>This is where the previous and next button will go</h1>
+      <h1>Placeholder until I fix this so it looks better</h1>
     </div>
   </div>
   <script type="module" src="/scroller.js"></script>
   <script type="module" src="/speech.js"></script>
   <script type="module" src="/pokemonList.js"></script>
   <script type="module" src="/searchAssist.js"></script>
+  <script type="module" src="/speechSyn.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
 </body>
 

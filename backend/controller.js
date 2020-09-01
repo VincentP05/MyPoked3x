@@ -57,6 +57,48 @@ let temp = new Array(1);
 router
     .route('/pokemon') //Dealing with /search/bar , router object already starts with /search
     .get((req, res) => {
+        //There are 12 pokemon, who are exceptions, and I do not know why the api was written like this,
+        //but there entries are in spanish, which makes no sense. When all the other people are in english. 
+        //Switch statement will be used to manually fix this
+        switch (pokemonTraits[8]) {
+            case 663:
+                pokemonTraits[7] = "When attacking prey, it can reach speeds of up to 310 mph. It finishes its prey off with a colossal kick."
+                break;
+            case 670:
+                pokemonTraits[7] = "When the flowers of a well-tended flower bed bloom, it appears and celebrates with an elegant dance."
+                break;
+            case 697:
+                pokemonTraits[7] = "Nothing could stop this Pokémon 100 million years ago, so it behaved like a king."
+                break;
+            case 698:
+                pokemonTraits[7] = "This calm Pokémon lived in a cold land where there were no violent predators like Tyrantrum."
+                break;
+            case 705:
+                pokemonTraits[7] = "Its four horns are a high-performance radar system. It uses them to sense sounds and smells, rather than using ears or a nose."
+                break;
+            case 715:
+                pokemonTraits[7] = "The ultrasonic waves it emits from its ears can reduce a large boulder to pebbles. It swoops out of the dark to attack."
+                break;
+            case 736:
+                pokemonTraits[7] = "It spits a sticky thread to stop opponents in their tracks, and then it grabs them in its sharp, sturdy mandibles to take them down."
+                break;
+            case 764:
+                pokemonTraits[7] = "Baths prepared with the flowers from its vine have a relaxing effect, so this Pokémon is a hit with many people."
+                break;
+            case 780:
+                pokemonTraits[7] = "This Pokémon is friendly to people and loves children most of all. It comes from deep in the mountains to play with children it likes in town."
+                break;
+            case 793:
+                pokemonTraits[7] = "It appeared in this world from an Ultra Wormhole. Nihilego appears to be a parasite that lives by feeding on people and Pokémon."
+                break;
+            case 794:
+                pokemonTraits[7] = "A mysterious life-form called an Ultra Beast. Witnesses saw it pulverize a dump truck with a single punch."
+                break;
+            case 798:
+                pokemonTraits[7] = "One of the Ultra Beast life-forms, it was observed cutting down a gigantic steel tower with one stroke of its blade."
+                break;
+        }
+
         res.render('pokedex', {
             id: pokemonTraits[0],
             name: pokemonTraits[1],
@@ -127,9 +169,10 @@ function validatePokemon(name) {
             const f = newPokemon.getSprite();
             const g = newPokemon.getGenus();
             const h = newPokemon.getEntry();
+            const i = newPokemon.getNormID();
 
             //Data put into global array
-            pokemonTraits = [a, b, c, d, e, f, g, h];
+            pokemonTraits = [a, b, c, d, e, f, g, h, i];
             temp[0] = 1;
         }
     })

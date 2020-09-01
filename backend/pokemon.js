@@ -12,6 +12,12 @@ class Pokemon {
     this.entry = entry;
   }
 
+  //gets regular id
+  getNormID() {
+    return this.id;
+  }
+
+  //Fancy id, ex 7 is 007
   getID() {
     return this.id.toString().padStart(3, '0');
   }
