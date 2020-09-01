@@ -66,8 +66,8 @@ const speak = () => {
     }
 
     //Selected voice 
-    //Google US English (en-US)
-    speakText.voice = voices[2];
+    //Microsoft Zira
+    speakText.voice = voices[0];
 
     //Set pitch and rate
     speakText.rate = 1;
