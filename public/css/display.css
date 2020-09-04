@@ -1,0 +1,45 @@
+.display-screen {
+    background-color: #b5d9ef;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    border: 4px solid #2f3640;
+    font: 24px pokemon-dp-pro, Tahoma;
+    text-align: center;
+
+}
+
+.poke-description {
+    font: 24px pokemon-dp-pro, Tahoma;
+    background-color: #51AE5F;
+    border: 2px solid #021E1C;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.display-screen img {
+    width: 150px;
+    /* you can use % */
+    height: auto;
+}
+
+.display-screen p {
+    margin: 10px;
+}
+
+@media (max-width: 480px) {
+    .display-screen {
+        margin: 1rem;
+    }
+
+    .poke-description {
+        margin-top: 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        ;
+    }
+}

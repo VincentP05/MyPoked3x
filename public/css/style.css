@@ -1,11 +1,11 @@
+/*General css for the main containers and next/prev buttons*/
+
 .main-wrapper {
-  width: 80%;
+  width: 100%;
   height: 100%;
-  margin-left: 10%;
-  margin-right: 10%;
   display: flex;
   justify-content: center;
-  align-items: stretch;
+  position: relative;
 }
 
 .flex-item1 {
@@ -13,8 +13,11 @@
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   display: flex;
-  align-items: stretch;
   flex-direction: column;
+  align-items: stretch;
+  flex-basis: 0;
+  flex-grow: 1;
+  position: relative;
 }
 
 .flex-item2 {
@@ -22,6 +25,9 @@
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border-left: 8px solid #89061c;
+  position: relative;
+  flex-basis: 0;
+  flex-grow: 1;
 }
 
 .top-menu {
@@ -35,30 +41,21 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom: solid #89061c;
-}
-
-.display-screen {
-  background-color: #b5d9ef;
-  margin: 1rem;
-  border: 4px solid #2f3640;
-}
-
-.display-screen h1,
-h3 {
-  margin: 0rem;
-  padding: 5px;
-}
-
-.poke-description {
-  background-color: greenyellow;
-  margin: 1rem;
+  flex-shrink: 0;
+  padding-bottom: 2em;
 }
 
 @media (max-width: 480px) {
+  html {
+    background-image: none;
+    background-color: #d43132
+  }
+
   .main-wrapper {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
   }
 
   .flex-item1,
@@ -78,30 +75,22 @@ h3 {
     border-top-right-radius: 0px;
     border-bottom-left-radius: 10px;
   }
-
-  .search-bar {
-    background-size: contain;
-    min-width: 100%;
-    min-height: 5rem;
-    width: auto;
-    height: auto;
-  }
 }
 
 .next_prev_buttons {
   display: flex;
   justify-content: space-around;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .left-button,
 .right-button {
   align-items: center;
-  background: #DEDEDE;
+  background: #dedede;
   border-radius: 3px;
   border: 2px solid black;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, .3);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   display: flex;
   font-weight: bold;
