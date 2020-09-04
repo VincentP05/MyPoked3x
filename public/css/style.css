@@ -48,14 +48,13 @@
 @media (max-width: 480px) {
   html {
     background-image: none;
-    background-color: #d43132
+    background-color: #d43132;
   }
 
   .main-wrapper {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
   }
 
   .flex-item1,
@@ -81,7 +80,7 @@
   display: flex;
   justify-content: space-around;
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .left-button,
