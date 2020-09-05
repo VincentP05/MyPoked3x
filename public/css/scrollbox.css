@@ -1,22 +1,61 @@
 .scroll-box {
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 800px;
-    margin: 1em;
+    height: 750px;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 2rem;
     background-color: white;
     border-radius: 10px;
     color: #2f3640;
     box-sizing: border-box;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.scroll-touch {
+    -webkit-overflow-scrolling: touch;
+    /* Lets it scroll lazy */
+}
+
+.pokIcon {
+    width: 30px;
+    /* you can use % */
+    height: 30px;
+    align-self: center;
+
+}
+
+.scroller {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-top: 0.25px solid white;
+    border-bottom: 0.25px solid white;
+    background-color: #2f3640;
+}
+
+.scroller p {
+    font: 25px pokemon-dp-pro, Tahoma;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.scroll-box div:hover {
+    /*when hovering an item:*/
+    background-color: #547497;
 }
 
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 20px;
-    background: #2f3640;
+    background: #9fa9be;
 }
 
 ::-webkit-scrollbar-track {
@@ -24,8 +63,13 @@
     border-radius: 20px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 568px) {
     .scroll-box {
         height: 400px;
     }
+
+    ::-webkit-scrollbar {
+        width: 0;
+    }
+
 }

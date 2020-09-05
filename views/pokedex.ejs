@@ -4,13 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Poked3x</title>
+  <title>Pokedex</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
   <link rel="stylesheet" type="text/css" href="/css/searchbar.css" />
   <link rel="stylesheet" type="text/css" href="/css/scrollbox.css" />
   <link rel="stylesheet" type="text/css" href="/css/autocomplete.css" />
   <link rel="stylesheet" type="text/css" href="/css/display.css" />
-  <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css">
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
 </head>
@@ -29,11 +28,10 @@
           <button id="microphone-btn">
             <i class="fa fa-microphone" aria-hidden="true"></i>
           </button>
-          <span id="message"></span>
           <div class="autocomplete">
-
           </div>
         </div>
+        <div id="message"></div>
       </div>
       <div class="display-screen">
         <p id='pokeNum'>#<%=id%></p>
@@ -66,7 +64,7 @@
       </div>
     </div>
     <div class="flex-item2">
-      <div class="scroll-box">
+      <div class="scroll-box" class="scroll-touch">
         <!--Pokemon List will be created here-->
       </div>
     </div>

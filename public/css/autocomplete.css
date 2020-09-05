@@ -7,6 +7,8 @@
 .autocomplete-items {
     position: absolute;
     border: 1px solid #d4d4d4;
+    border-left: none;
+    border-right: none;
     border-bottom: none;
     border-top: none;
     z-index: 99;
@@ -14,6 +16,11 @@
     top: 100%;
     left: 0;
     right: 0;
+    font-family: Tahoma,
+        Geneva,
+        sans-serif;
+    letter-spacing: 0.5px;
+    color: white;
 }
 
 .autocomplete-items div {
@@ -25,11 +32,11 @@
 
 .autocomplete-items div:hover {
     /*when hovering an item:*/
-    background-color: #e9e9e9;
+    background-color: #4282c6;
 }
 
 .autocomplete-active {
     /*when navigating through the items using the arrow keys:*/
-    background-color: DodgerBlue;
+    background-color: #547497 !important;
     color: #ffffff;
 }

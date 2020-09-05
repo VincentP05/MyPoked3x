@@ -23,7 +23,10 @@ const handleListItemClick = (e) => {
 
 for (i = 0; i < pokemons.length - 2; i++) {
     const listItem = document.createElement("DIV");
-    listItem.innerHTML = "<p>" + '#' + (i + 1).toString().padStart(3, '0') + ' ' + pokemons[i] + "</p>";
+    listItem.innerHTML =
+        "<img src='/images/pokeball.png' class='pokIcon'/>" +
+        "<p>" + (i + 1).toString().padStart(3, '0') + ' ' + pokemons[i] + "</p>"
+    listItem.className = 'scroller';
     listItem.addEventListener('click', handleListItemClick);
     scrollbox.appendChild(listItem);
 }

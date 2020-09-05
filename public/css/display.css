@@ -47,7 +47,7 @@ input.speechf {
     height: 16px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 568px) {
     .display-screen {
         margin: 1rem;
     }

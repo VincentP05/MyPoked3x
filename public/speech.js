@@ -71,7 +71,7 @@ recognition.onspeechend = () => {
 
 //What happens when an error occurs
 recognition.onerror = (event) => {
-    message.textContent = 'Error occured in recognition: ' + event.error;
+    message.textContent = 'Error: ' + event.error;
     searchBar.placeholder = 'Search Pokemon';
     microphoneBtn.disabled = false;
     setTimeout(() => {

@@ -1,5 +1,4 @@
 /*General css for the main containers and next/prev buttons*/
-
 .main-wrapper {
   width: 100%;
   height: 100%;
@@ -42,10 +41,13 @@
   border-top-right-radius: 10px;
   border-bottom: solid #89061c;
   flex-shrink: 0;
-  padding-bottom: 2em;
+  padding-bottom: 1rem;
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: center;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 568px) {
   html {
     background-image: none;
     background-color: #d43132;
@@ -85,6 +87,8 @@
 
 .left-button,
 .right-button {
+  font-family: pokemon-dp-pro, Tahoma;
+  font-size: 25px;
   align-items: center;
   background: #dedede;
   border-radius: 3px;
