@@ -59,7 +59,7 @@ router
     .route('/pokemon') //Dealing with /search/bar , router object already starts with /search
     .get((req, res) => {
         //There are 12 pokemon, who are exceptions, and I do not know why the api was written like this,
-        //but there entries are in spanish, which makes no sense. When all the other people are in english. 
+        //but there entries are in spanish, which makes no sense. When all the other pokemon are in english. 
         //Switch statement will be used to manually fix this
         switch (pokemonTraits[8]) {
             case 663:
